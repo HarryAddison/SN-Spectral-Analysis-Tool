@@ -178,7 +178,14 @@ for i, id in enumerate(sne_info["id"]):
                 pew = calc_pew(feat_spec, continuum, keys=["wave", "flux"])
 
                 # Add the best fit velocity and pew to the row.
-                row.append(velocity)
+                # Invert the velocity. Originally defined it so that a redshifted
+                # line was == +vel while blueshifted line == -vel. 
+                # Want the definition of vel to be relative to the centre of
+                # the SN and so +vel == moving outwards from the centre.
+                # As blueshifted line == moving outwards from the centre of SN
+                # (i.e towards us), make this the +vel. Therefore need to invert
+                # the original vel.
+                row.append(-velocity)
                 row.append(pew)
                 print(row)
 
