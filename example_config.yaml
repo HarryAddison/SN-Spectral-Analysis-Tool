@@ -2,7 +2,7 @@
 sn_spec_dir: "/template-spectra"
 
 # Path to the file containing the measurements for each SN.
-sn_measure_path: "/measurements.fits"
+sn_measure_path: "/template_measurements.fits"
 
 # Path to the file containing info of the SN.
 sn_info_path: "/spectrum_parameters.fits"
